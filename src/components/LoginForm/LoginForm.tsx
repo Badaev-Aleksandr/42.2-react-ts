@@ -11,18 +11,18 @@ function LoginForm() {
           name="userEmail"
           type="email"
           placeholder="Enter your email"
-          label="emailId"
+          id="emailId"
           labelName="Email"
         />
         <Input
           name="userPassword"
           type="password"
           placeholder="Enter your password"
-          label="passwordId"
+          id="passwordId"
           labelName="Password"
         />
       </div>
-      <Button buttonName={"Login"} type={"submit"} />
+      <Button name="Login" type="submit" />
     </form>
   );
 }
