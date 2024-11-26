@@ -2,7 +2,7 @@ import Button from "../Button/Button";
 import "./styles.css";
 import { useState } from "react";
 
-function Feedback(): object {
+function Feedback() {
   const [countLike, setCountLike] = useState(0);
   const [countDislike, setCountDislike] = useState(0);
 
