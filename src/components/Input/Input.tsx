@@ -1,9 +1,10 @@
 import "./styles.css";
+import { InputProps } from "./types";
 
-function Input({ name, type, placeholder, id, labelName }) {
+function Input({ name, type, placeholder, id, labelName }: InputProps) {
   return (
     <div className="input-label-wrapper">
-      <label for={id}>{labelName}</label>
+      <label htmlFor={id}>{labelName}</label>
       <input
         name={name}
         type={type}

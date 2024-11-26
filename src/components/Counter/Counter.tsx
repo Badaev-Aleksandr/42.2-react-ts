@@ -3,7 +3,7 @@ import "./styles.css";
 //Шаг 1 - импорт хука useState из react
 import { useState } from "react";
 
-function Counter() {
+function Counter(){
   //Шаг 2 - вызываем хук useState и передаем в него первоначальное состояние (InitialState)
   //Вызываем деструктуризацию массива из двух элементов, который возвращает хук useState
   const [count, setCount] = useState(0);
@@ -14,11 +14,11 @@ function Counter() {
   //   const setCount = result[1];
   //   console.log(setCount);
 
-  const onPlusClick = () => {
+  const onPlusClick = (): void => {
     setCount((prevValue) => prevValue + 1);
   };
 
-  const onMinusClick = () => {
+  const onMinusClick = (): void => {
     setCount((prevValue) => prevValue - 1);
   };
 
