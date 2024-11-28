@@ -3,8 +3,8 @@ import "./styles.css";
 import { useState } from "react";
 
 function Feedback() {
-  const [countLike, setCountLike] = useState(0);
-  const [countDislike, setCountDislike] = useState(0);
+  const [countLike, setCountLike] = useState<number>(0);
+  const [countDislike, setCountDislike] = useState<number>(0);
 
   const onPlusLike = (): void => {
     setCountLike((prevValue) => prevValue + 1);
@@ -14,7 +14,7 @@ function Feedback() {
     setCountDislike((prevValue) => prevValue + 1);
   };
 
-  const resetResult = (): void => {
+  const resetResults = (): void => {
     setCountLike(0);
     setCountDislike(0);
   };
@@ -32,7 +32,7 @@ function Feedback() {
         <div className="result">{countDislike}</div>
       </div>
       <div className="reset-button">
-        <Button name="Reset Results" onClick={resetResult} />
+        <Button name="Reset Results" onClick={resetResults} />
       </div>
     </div>
   );

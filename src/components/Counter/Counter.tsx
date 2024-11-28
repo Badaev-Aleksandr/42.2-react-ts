@@ -3,10 +3,13 @@ import "./styles.css";
 //Шаг 1 - импорт хука useState из react
 import { useState } from "react";
 
-function Counter(){
+function Counter() {
+  console.log("Render");
+
   //Шаг 2 - вызываем хук useState и передаем в него первоначальное состояние (InitialState)
   //Вызываем деструктуризацию массива из двух элементов, который возвращает хук useState
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState<number | undefined>(0);
+  const [count, setCount] = useState<number>(0);
   //   const result = useState(0);
   //   console.log(result);
   //   const count = result[0];

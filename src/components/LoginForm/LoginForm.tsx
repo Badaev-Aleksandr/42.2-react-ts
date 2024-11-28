@@ -9,17 +9,17 @@ function LoginForm() {
       <div className="input-container">
         <Input
           name="userEmail"
+          id="emailId"
           type="email"
           placeholder="Enter your email"
-          id="emailId"
-          labelName="Email"
+          label="Email"
         />
         <Input
           name="userPassword"
+          id="passwordId"
           type="password"
           placeholder="Enter your password"
-          id="passwordId"
-          labelName="Password"
+          label="Password"
         />
       </div>
       <Button name="Login" type="submit" />
