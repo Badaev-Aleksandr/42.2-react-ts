@@ -1,5 +1,5 @@
 import Button from "../Button/Button";
-import "./styles.css";
+import { CounterContainer, CounterResult, ButtonWrapper } from "./styles";
 //Шаг 1 - импорт хука useState из react
 import { useState } from "react";
 
@@ -26,15 +26,15 @@ function Counter() {
   };
 
   return (
-    <div className="counter-container">
-      <div className="button-wrapper">
+    <CounterContainer>
+      <ButtonWrapper>
         <Button name="-" onClick={onMinusClick} />
-      </div>
-      <div className="counter-result">{count}</div>
-      <div className="button-wrapper">
+      </ButtonWrapper>
+      <CounterResult>{count}</CounterResult>
+      <ButtonWrapper>
         <Button name="+" onClick={onPlusClick} />
-      </div>
-    </div>
+      </ButtonWrapper>
+    </CounterContainer>
   );
 }
 
