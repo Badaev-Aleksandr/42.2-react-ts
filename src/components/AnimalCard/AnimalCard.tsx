@@ -1,5 +1,10 @@
 import { AnimalCardProps } from "./types";
-import {AnimalCardWrapper, AnimalCardWrapperImg} from './styles';
+import {
+  AnimalCardWrapper,
+  AnimalCardWrapperImg,
+  AnimalName,
+  AnimalSpecies,
+} from "./styles";
 
 // interface Animal {
 //   name: string
@@ -9,11 +14,11 @@ import {AnimalCardWrapper, AnimalCardWrapperImg} from './styles';
 //   image: string
 // }
 
-function AnimalCard({animalData}: AnimalCardProps) {
+function AnimalCard({ animalData }: AnimalCardProps) {
   return (
     <AnimalCardWrapper>
-      <h3>{animalData.animalName}</h3>
-      <div>{animalData.animalSpecies}</div>
+      <AnimalName>{animalData.animalName}</AnimalName>
+      <AnimalSpecies>{animalData.animalSpecies}</AnimalSpecies>
       <AnimalCardWrapperImg src={animalData.animalImage} />
     </AnimalCardWrapper>
   );

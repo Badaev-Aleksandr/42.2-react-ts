@@ -18,10 +18,10 @@ export const MainButton = styled.button<MainButtonProps>`
   align-items: center;
   color: #ffffff;
   line-height: 30px;
-  cursor: pointer;
+  cursor: ${({ disabled }) => disabled ? "not-allowed" : "pointer"};
   box-shadow: 0 5px #666;
   transition: all 0.1s ease-in-out;
-
+ 
   &:active {
     box-shadow: 0 2px #666;
     transform: translateY(3px);

@@ -1,4 +1,3 @@
-import "./styles.css";
 import { ButtonProps } from "./types";
 import {MainButton} from './styles';
 
