@@ -1,18 +1,19 @@
 import "./styles.css";
 import { InputProps } from "./types";
+import { InputLabelWrapper, Label, InputElement } from "./styles";
 
-function Input({ name, type = 'text', placeholder, id, label }: InputProps) {
+function Input({ name, type = "text", placeholder, id, label }: InputProps) {
   return (
-    <div className="input-label-wrapper">
-      {label && <label htmlFor={id}>{label}</label>}
-      <input
+    <InputLabelWrapper>
+      {label && <Label htmlFor={id}>{label}</Label>}
+      <InputElement
         name={name}
         type={type}
         id={id}
         placeholder={placeholder}
         required
       />
-    </div>
+    </InputLabelWrapper>
   );
 }
 

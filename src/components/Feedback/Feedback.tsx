@@ -1,5 +1,5 @@
 import Button from "../Button/Button";
-import "./styles.css";
+import {FeedbackWrapper, ButtonsResultsContainer, Result, ResetButton, ButtonLike, ButtonDislike} from "./styles";
 import { useState } from "react";
 
 function Feedback() {
@@ -20,21 +20,21 @@ function Feedback() {
   };
 
   return (
-    <div className="feedback-wrapper">
-      <div className="buttons-results-container">
-        <div className="result">{countLike}</div>
-        <div className="button-like">
+    <FeedbackWrapper>
+      <ButtonsResultsContainer>
+        <Result>{countLike}</Result>
+        <ButtonLike>
           <Button name="Like" onClick={onPlusLike} />
-        </div>
-        <div className="button-dislike">
+        </ButtonLike>
+        <ButtonDislike>
           <Button name="Dislike" onClick={onPlusDislike} />
-        </div>
-        <div className="result">{countDislike}</div>
-      </div>
-      <div className="reset-button">
+        </ButtonDislike>
+        <Result>{countDislike}</Result>
+      </ButtonsResultsContainer>
+      <ResetButton>
         <Button name="Reset Results" onClick={resetResults} />
-      </div>
-    </div>
+      </ResetButton>
+    </FeedbackWrapper>
   );
 }
 
