@@ -13,7 +13,7 @@ export const LoginFormWrapper = styled.form`
   font-family: Lato, Geneva, Tahoma, sans-serif;
 `;
 
-export const LoginFormTitel = styled.div`
+export const LoginFormTitel = styled.h3`
   line-height: 24px;
   font-weight: 400;
   font-size: 24px;
@@ -21,7 +21,7 @@ export const LoginFormTitel = styled.div`
   font-family: "Lato", sans-serif;
 `;
 
-export const InputsContainer = styled.form`
+export const InputsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;

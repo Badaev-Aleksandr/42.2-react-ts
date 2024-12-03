@@ -1,7 +1,8 @@
-import "./styles.css";
+import { Lesson06Container } from "./styles";
+
 
 function Lesson06() {
-  //1. Типизация строк
+  //-------------------------------------------1. Типизация строк
   let userName: string = "Tom";
   userName = "28";
   userName = "";
@@ -11,7 +12,7 @@ function Lesson06() {
   result = 1 + 2 + "4" + 7 + 5; //3475
   console.log(result);
 
-  //2. Типизация чисел
+  //-------------------------------------------2. Типизация чисел
   let luckyNumber: number = 7;
   // luckyNumber = '34'; не работает
   luckyNumber = NaN;
@@ -22,14 +23,14 @@ function Lesson06() {
 
   // Тип BigInt -bigint
 
-  //3. Типизация логического типа
+  //------------------------------------------3. Типизация логического типа
   let isAdmin: boolean = true;
   isAdmin = false;
   // isAdmin = undefined; не работает
   isAdmin = 2 < 0 || 3 > 0;
   isAdmin = !!1;
 
-  //4. null и undefind
+  //--------------------------------------------4. null и undefind
   let emptyValue: null = null;
   // emptyValue = 0;
   // emptyValue = undefined;
@@ -39,20 +40,20 @@ function Lesson06() {
   // data = null;
   // data: null = null;
 
-  //5. Типизация массива
+  //--------------------------------------------5. Типизация массива
   const colors: string[] = ["red", "blue", "black"];
   // colors.push(2);
   colors.push("23");
   // colors[0] = 23456;
   colors[0] = "23456";
 
-  //6. Кортеж (tupel)
+  //---------------------------------------------6. Кортеж (tupel)
   const fruits: [string, number] = ["Apple", 4];
   fruits.push('cherry');
   console.log(fruits);
   // fruits[2]
 
-    //7. Типизация возвращаемого функцией значения
+    //--------------------------------------7. Типизация возвращаемого функцией значения
     const showMessage = (): void => {
       console.log('Hello');
     }
@@ -62,7 +63,7 @@ function Lesson06() {
     }
     console.log(returnNumber());
 
-    //8. Автоматическое определение типа и any
+    //--------------------------------------8. Автоматическое определение типа и any
     let name = 'Bob';
     // name = 34;
     let userData;
@@ -75,12 +76,19 @@ function Lesson06() {
     // console.log(a);
   var a = 30;
 
-  // 10. Union type
+  //-------------------------------------------9. Типизация параметров функций
+  const getUserData = (firstName: string, age: number = 30) => {
+    return `${firstName} ${age}`
+  }
+
+  getUserData('Nick');
+
+  // -----------------------------------------------10. Union type
   let isManager: boolean | undefined | string = true;
   isManager = undefined;
   isManager = 'yes';
 
-    // 11. Типизация объектов
+    //-------------------------------------------- 11. Типизация объектов
     interface User {
       name: string,
       age?: number | string
@@ -113,7 +121,7 @@ function Lesson06() {
       city: 'Berlin'
     }
 
-  return <div className="lesson06-container">Lesson 6 - Type Script</div>;
+  return <Lesson06Container>Lesson 6 - Type Script</Lesson06Container>;
 }
 
 export default Lesson06;
