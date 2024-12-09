@@ -2,6 +2,8 @@ import { InputProps } from "./types";
 import { InputLabelWrapper, Label, InputElement } from "./styles";
 
 function Input({ name, type = "text", placeholder, id, label, required, onChange, value }: InputProps) {
+  // console.log("Input render or re-render");
+
   return (
     <InputLabelWrapper>
       {label && <Label htmlFor={id}>{label}</Label>}

@@ -5,7 +5,7 @@ import { CounterProps } from "./types";
 //import { useState } from "react";
 
 function Counter({countValue, onMinus, onPlus}:CounterProps) {
-  console.log("Render");
+  // console.log("Counter render or re-render");
 
   //Шаг 2 - вызываем хук useState и передаем в него первоначальное состояние (InitialState)
   //Вызываем деструктуризацию массива из двух элементов, который возвращает хук useState
