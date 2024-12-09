@@ -1,6 +1,8 @@
 import { ChangeEvent, useState } from "react";
+
 import Button from "../../components/Button/Button";
 import Input from "../../components/Input/Input";
+
 import { BlockOne, BlockTwo, FormWrapper, Homework08Wrapper } from "./styles";
 
 function Homework08() {
@@ -36,14 +38,16 @@ function Homework08() {
           placeholder="введите тект"
           onChange={onChangeInputOne}
           value={inputValueOne}
+          required = {true}
         />
         <Input
           name="controlledInput"
           placeholder="введите тект"
           onChange={onChangeInputTwo}
           value={inputValueTwo}
+          required = {true}
         />
-        <Button name="Send" onClick={onClickButton}/>
+        <Button name="Send" type="submit" onClick={onClickButton}/>
       </FormWrapper>
       <BlockOne>{outputValueOne}</BlockOne>
       <BlockTwo>{outputValueTwo}</BlockTwo>
