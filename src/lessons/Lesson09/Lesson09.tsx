@@ -57,7 +57,7 @@ function Lesson09() {
     //   fetchData()
     // }, [])
 
-     //отправка запроса при изменении поля
+     //отправка запроса при изменении
         useEffect(()=>{
       fetchData()
     }, [searchValue])
