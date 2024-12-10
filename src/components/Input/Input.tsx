@@ -1,7 +1,7 @@
 import { InputProps } from "./types";
-import { InputLabelWrapper, Label, InputElement } from "./styles";
+import { InputLabelWrapper, Label, InputElement, ErrorMessage } from "./styles";
 
-function Input({ name, type = "text", placeholder, id, label, required, onChange, value }: InputProps) {
+function Input({ name, type = "text", placeholder, id, label, required, onChange, value, error }: InputProps) {
   // console.log("Input render or re-render");
 
   return (
@@ -16,6 +16,8 @@ function Input({ name, type = "text", placeholder, id, label, required, onChange
         value={value}
         required = {required}
       />
+      <ErrorMessage>{error}</ErrorMessage>
+      {/* {error && <ErrorMessage>{error}</ErrorMessage>} */}
     </InputLabelWrapper>
   );
 }

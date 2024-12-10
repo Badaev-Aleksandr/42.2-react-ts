@@ -23,10 +23,6 @@ function Homework09() {
     }
   };
 
-  useEffect(() => {
-    fetchData();
-  }, [firstValue]);
-
   const firstValueOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFirstValue(event.target.value);
   };
@@ -34,6 +30,10 @@ function Homework09() {
   const secondValueOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSecondValue(event.target.value);
   };
+
+  useEffect(() => {
+    fetchData();
+  }, [firstValue]);
 
   return (
     <Homework09Wrapper>
