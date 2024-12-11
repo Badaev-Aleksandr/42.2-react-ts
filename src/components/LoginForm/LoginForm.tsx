@@ -4,10 +4,14 @@ import * as Yup from "yup";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import "./styles.ts";
+
 import { LoginFormWrapper, LoginFormTitel, InputsContainer } from "./styles";
 import { LoginFormValue, LOGIN_FORM_NAMES } from "./types";
 
 function LoginForm() {
+  const nameRegx = /^[a-zA-Z]+$/;
+
+  
   //создавать валидационную схему через Yup
   const shema = Yup.object().shape({
     [LOGIN_FORM_NAMES.EMAIL]: Yup.string()
@@ -31,6 +35,14 @@ function LoginForm() {
         "Max 20 symbol",
         (value) => String(value).length <= 20
       ),
+    [LOGIN_FORM_NAMES.USER_NAME]: Yup.string()
+      .required("Field Name is required")
+      .test(
+        "Check symbol lenght",
+        "Min 2 and Max 30 symbol",
+        (value) => value.length >= 2 && value.length <= 30
+      ).matches(nameRegx, "The letters must be in Latin")
+
     // .max(150, "Max 150")
     // .min(18, "Min 18"),
   });
@@ -40,6 +52,7 @@ function LoginForm() {
     initialValues: {
       [LOGIN_FORM_NAMES.EMAIL]: "",
       [LOGIN_FORM_NAMES.PASSWORD]: "",
+      [LOGIN_FORM_NAMES.USER_NAME]: "",
     } as LoginFormValue,
     //привязка валидационной схемы Yup к формику формы LoginForm
     validationSchema: shema,
@@ -55,6 +68,15 @@ function LoginForm() {
     <LoginFormWrapper onSubmit={formik.handleSubmit}>
       <LoginFormTitel>Login form</LoginFormTitel>
       <InputsContainer>
+        <Input 
+        name={LOGIN_FORM_NAMES.USER_NAME} 
+        id="userName"
+        placeholder="Your Name"
+        label="Name"
+        value= {formik.values[LOGIN_FORM_NAMES.USER_NAME]}
+        onChange={formik.handleChange}
+        error={formik.errors[LOGIN_FORM_NAMES.USER_NAME]}
+        />
         <Input
           name={LOGIN_FORM_NAMES.EMAIL}
           id="email_Id"
