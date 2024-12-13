@@ -3,7 +3,7 @@ export interface EmployeeFormValue{
     last_name: string;
     age: string;
     position: string;
-    terms_of_use: boolean;
+    is_agree: boolean;
 }
 
 export enum EMPLOYEE_FORM_NAMES {
@@ -11,5 +11,5 @@ export enum EMPLOYEE_FORM_NAMES {
     LAST_NAME = "last_name",
     AGE = "age",
     POSITION = "position",
-    TERMS_OF_USE = "terms_of_use"
+    IS_AGREE = "is_agree"
 }

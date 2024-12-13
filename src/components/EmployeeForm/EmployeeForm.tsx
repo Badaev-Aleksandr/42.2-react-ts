@@ -6,16 +6,23 @@ import * as Yup from "yup";
 
 import { EmployeeFormWrapper } from "./styles";
 import { EMPLOYEE_FORM_NAMES, EmployeeFormValue } from "./types";
+import Checkbox from "components/Checkbox/Checkbox";
 
 function EmployeeForm() {
-  const schema = Yup.object().shape({
+  const validationSchema = Yup.object().shape({
     [EMPLOYEE_FORM_NAMES.FIRST_NAME]: Yup.string()
       .required("Field First Name is required")
       .test(
         "Check value length",
-        "Min 2 symbols and Max 50 symbols",
+        "Min 2 symbols",
 
-        (value) => value.length >= 2 && value.length <= 50
+        (value) => value.length >= 2
+      )
+      .test(
+        "Check value length",
+        "Max 50 symbols",
+
+        (value) => value.length <= 50
       ),
     [EMPLOYEE_FORM_NAMES.LAST_NAME]: Yup.string()
       .required("Field Last Name is required")
@@ -25,30 +32,22 @@ function EmployeeForm() {
 
         (value) => value.length <= 15
       ),
-    [EMPLOYEE_FORM_NAMES.AGE]: Yup.number().test(
-      "Check validation age",
-      "Min 18 , Max 80 Age!",
-
-      (value) => {
-        if (!value) {
-          return false;
-        }
-        return value >= 18 && value <= 80;
-      }
-    ),
+    [EMPLOYEE_FORM_NAMES.AGE]: Yup.number()
+      .typeError("Age must be nummber")
+      .min(18, "Min 18 old age")
+      .max(80, "Max 80 old age"),
     [EMPLOYEE_FORM_NAMES.POSITION]: Yup.string()
       .required("Field Position is required")
       .test(
         "Check value length",
         "Max 30 symbol",
 
-        (value) => {
-          if (!value) {
-            return false;
-          }
-          return value.length <= 30;
-        }
+        (value) => value.length <= 30
       ),
+    [EMPLOYEE_FORM_NAMES.IS_AGREE]: Yup.boolean().oneOf(
+      [true],
+      "Your must accept the terms"
+    ),
   });
 
   const formik = useFormik({
@@ -57,9 +56,9 @@ function EmployeeForm() {
       [EMPLOYEE_FORM_NAMES.LAST_NAME]: "",
       [EMPLOYEE_FORM_NAMES.AGE]: "",
       [EMPLOYEE_FORM_NAMES.POSITION]: "",
-      [EMPLOYEE_FORM_NAMES.TERMS_OF_USE]: false,
+      [EMPLOYEE_FORM_NAMES.IS_AGREE]: false,
     } as EmployeeFormValue,
-    validationSchema: schema,
+    validationSchema,
     validateOnChange: false,
     onSubmit: (values: EmployeeFormValue) => {
       console.log(values);
@@ -68,8 +67,19 @@ function EmployeeForm() {
 
   console.log(formik);
 
+  const formClear = () => {
+    if (
+      formik.values[EMPLOYEE_FORM_NAMES.FIRST_NAME] &&
+      formik.values[EMPLOYEE_FORM_NAMES.LAST_NAME] &&
+      formik.values[EMPLOYEE_FORM_NAMES.POSITION] &&
+      formik.values[EMPLOYEE_FORM_NAMES.IS_AGREE]
+    ) {
+      formik.resetForm();
+    }
+  };
+
   return (
-    <EmployeeFormWrapper onSubmit={() => {}}>
+    <EmployeeFormWrapper onSubmit={formik.handleSubmit}>
       <Input
         name={EMPLOYEE_FORM_NAMES.FIRST_NAME}
         id="firstName"
@@ -106,14 +116,16 @@ function EmployeeForm() {
         onChange={formik.handleChange}
         error={formik.errors[EMPLOYEE_FORM_NAMES.POSITION]}
       />
-      <Input 
-      name={EMPLOYEE_FORM_NAMES.TERMS_OF_USE} 
-      id="termsOfUse"
-      type="checkbox" 
-      label="Terms of use"
+      <Checkbox
+        name={EMPLOYEE_FORM_NAMES.IS_AGREE}
+        id="agree"
+        label="I Agree"
+        value={EMPLOYEE_FORM_NAMES.IS_AGREE}
+        checked={formik.values[EMPLOYEE_FORM_NAMES.IS_AGREE]}
+        onChange={formik.handleChange}
+        error={formik.errors[EMPLOYEE_FORM_NAMES.IS_AGREE]}
       />
-      
-      <Button name="Create" type="submit" />
+      <Button name="Create" type="submit" onClick={formClear} />
     </EmployeeFormWrapper>
   );
 }
