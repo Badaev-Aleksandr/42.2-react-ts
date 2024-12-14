@@ -13,7 +13,6 @@ function Checkbox({
   checked = false,
   value,
   onChange,
-  disabled,
   label,
   error,
 }: CheckboxProps) {
@@ -27,7 +26,6 @@ function Checkbox({
           checked={checked}
           value={value}
           onChange={onChange}
-          disabled={disabled}
         />
         {label && <Label htmlFor={id}>{label}</Label>}
       </CheckboxLabel>
