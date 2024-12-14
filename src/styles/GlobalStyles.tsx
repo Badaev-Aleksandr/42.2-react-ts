@@ -25,8 +25,6 @@ p {
 
 #root {
   display: flex;
-  align-items: center;
-  justify-content: center;
   min-height: 100%;
 }
 `;
