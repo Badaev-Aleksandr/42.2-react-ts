@@ -33,8 +33,10 @@ function EmployeeForm() {
         (value) => value.length <= 15
       ),
     [EMPLOYEE_FORM_NAMES.AGE]: Yup.number()
-      .typeError("Age must be nummber")
-      .min(18, "Min 18 old age")          // <---------------------------------------------ТУТ
+      .nullable()
+      .positive("Value must be a positive number.")
+      .typeError("Age must be a valid number")
+      .min(18, "Min 18 old age") 
       .max(80, "Max 80 old age"),
     [EMPLOYEE_FORM_NAMES.POSITION]: Yup.string()
       .required("Field Position is required")
@@ -61,7 +63,7 @@ function EmployeeForm() {
     validationSchema,
     validateOnChange: false,
     onSubmit: (values: EmployeeFormValue) => {
-      console.log(values);
+      console.log("Form values: ", values);
     },
   });
 
@@ -128,7 +130,7 @@ function EmployeeForm() {
       <Button
         name="Create"
         type="submit"
-        onClick={formClear}
+        // onClick={formClear}
         disabled={!formik.values[EMPLOYEE_FORM_NAMES.IS_AGREE]}
       />
     </EmployeeFormWrapper>
