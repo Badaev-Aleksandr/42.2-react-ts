@@ -34,7 +34,7 @@ function EmployeeForm() {
       ),
     [EMPLOYEE_FORM_NAMES.AGE]: Yup.number()
       .typeError("Age must be nummber")
-      .min(18, "Min 18 old age")
+      .min(18, "Min 18 old age")          // <---------------------------------------------ТУТ
       .max(80, "Max 80 old age"),
     [EMPLOYEE_FORM_NAMES.POSITION]: Yup.string()
       .required("Field Position is required")
@@ -125,7 +125,12 @@ function EmployeeForm() {
         onChange={formik.handleChange}
         error={formik.errors[EMPLOYEE_FORM_NAMES.IS_AGREE]}
       />
-      <Button name="Create" type="submit" onClick={formClear} />
+      <Button
+        name="Create"
+        type="submit"
+        onClick={formClear}
+        disabled={!formik.values[EMPLOYEE_FORM_NAMES.IS_AGREE]}
+      />
     </EmployeeFormWrapper>
   );
 }

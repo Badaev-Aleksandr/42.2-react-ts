@@ -18,12 +18,14 @@ export const MainButton = styled.button<MainButtonProps>`
   align-items: center;
   color: #ffffff;
   line-height: 30px;
-  cursor: ${({ disabled }) => disabled ? "not-allowed" : "pointer"};
+  cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
   box-shadow: 0 5px #666;
   transition: all 0.1s ease-in-out;
- 
+  pointer-events: ${({ disabled }) => (disabled ? "none" : "auto")};
+
   &:active {
-    box-shadow: 0 2px #666;
-    transform: translateY(3px);
+    box-shadow: ${({ disabled }) => (disabled ? "none" : " 0 2px #666")};
+    transform: ${({ disabled }) => (disabled ? "unset" : "translateY(3px)")};
+    pointer-events: ${({ disabled }) => (disabled ? "none" : "auto")};
   }
 `;
