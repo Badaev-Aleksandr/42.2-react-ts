@@ -5,6 +5,10 @@ import GlobalStyles from "./styles/GlobalStyles";
 import About from "pages/About/About";
 import Home from "pages/Home/Home";
 import Users from "pages/Users/Users";
+import Clients from "pages/Clients/Clients";
+import Volvo from "pages/Clients/components/Volvo/Volvo";
+import Audi from "pages/Clients/components/Audi/Audi";
+import Bmw from "pages/Clients/components/Bmw/Bmw";
 
 //lessons
 // import Lesson06 from "./lessons/Lesson06/Lesson06";
@@ -26,10 +30,15 @@ function App() {
       <GlobalStyles />
       <Layout>
         <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/about" element={<About/>}/>
-          <Route path="/users" element={<Users/>}/>
-          <Route path="*" element="PageNotFound"/>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/clients" element={<Clients />}>
+            <Route path="audi" element={<Audi />} />
+            <Route path="bmw" element={<Bmw />} />
+            <Route path="volvo" element={<Volvo />} />
+          </Route>
+          <Route path="*" element="PageNotFound" />
         </Routes>
       </Layout>
       {/* <Lesson06 /> */}
