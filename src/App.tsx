@@ -5,6 +5,7 @@ import GlobalStyles from "./styles/GlobalStyles";
 import About from "pages/About/About";
 import Home from "pages/Home/Home";
 import Users from "pages/Users/Users";
+import Lesson10 from "lessons/Lesson10/Lesson10/Lesson10";
 
 //lessons
 // import Lesson06 from "./lessons/Lesson06/Lesson06";
@@ -24,14 +25,14 @@ function App() {
   return (
     <BrowserRouter>
       <GlobalStyles />
-      <Layout>
+      {/* <Layout>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/about" element={<About/>}/>
           <Route path="/users" element={<Users/>}/>
           <Route path="*" element="PageNotFound"/>
         </Routes>
-      </Layout>
+      </Layout> */}
       {/* <Lesson06 /> */}
       {/* <Lesson07 /> */}
       {/* <Homework07/> */}
@@ -41,6 +42,7 @@ function App() {
       {/* <Lesson09 /> */}
       {/* <Homework09 /> */}
       {/* <Lesson11/> */}
+      <Lesson10/>
     </BrowserRouter>
   );
 }
