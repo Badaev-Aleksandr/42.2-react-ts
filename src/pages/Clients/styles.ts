@@ -8,18 +8,13 @@ export const ClientsPage = styled.div`
   flex: 1;
   font-size: 30px;
 `;
-
-export const СompaniesList = styled.ul`
-
-`
-
-export const CompanieLi = styled.li`
-
-`
-
 export const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   font-size: 30px;
 `;
 
-export const CompaniesTitle = styled.h1``
+export const СompaniesList = styled.ul``;
+
+export const CompanieLi = styled.li``;
+
+export const CompaniesTitle = styled.h1``;
