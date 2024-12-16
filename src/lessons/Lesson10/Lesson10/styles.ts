@@ -32,7 +32,8 @@ export const ResultWrapper = styled.div`
   height: 700px;
   width: 800px;
   overflow: auto;
-  border: 1px solid black;
+  border: 3px solid green;
+  border-radius: 6px;
 `;
 export const ResultList = styled.ul`
   display: flex;

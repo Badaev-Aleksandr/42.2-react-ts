@@ -14,9 +14,11 @@ import { useEffect, useState } from "react";
 
 import axios from "axios";
 import { v4 } from "uuid";
+import Spinner from "components/Spinner/Spinner";
 
 function Lesson10() {
   const [facts, setFacts] = useState<string[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const CAT_INFO_URL = " https://catfact.ninja/fact";
 
@@ -36,13 +38,15 @@ function Lesson10() {
   });
 
   const fetchDate = async () => {
+    setLoading(true);
     try {
       const respons = await axios.get(CAT_INFO_URL);
-      //   setCatInfo(respons.data.fact)
       setFacts((arrayInfo) => [...arrayInfo, respons.data.fact]);
       console.log(respons);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -57,13 +61,15 @@ function Lesson10() {
   useEffect(() => {
     fetchDate();
   }, []);
-  console.log(facts);
 
   return (
     <Lesson10Container>
       <ButtonWrapper>
-        <Button name="GET MORE INFO" onClick={getMoreInfo} />
-        <Button name="DELETE ALL DATA" onClick={allDelete} />
+        <Button name="GET MORE INFO" onClick={getMoreInfo} disabled={loading} />
+        {facts.length > 0 && (
+          <Button name="DELETE ALL DATA" onClick={allDelete} />
+        )}
+        {loading && <Spinner />}
       </ButtonWrapper>
       <ResultWrapper>
         <ResultList>{resultCatsInfo}</ResultList>
