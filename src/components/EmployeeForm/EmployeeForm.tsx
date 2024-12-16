@@ -67,8 +67,6 @@ function EmployeeForm() {
     },
   });
 
-  console.log(formik);
-
   const formClear = () => {
     if (
       formik.values[EMPLOYEE_FORM_NAMES.FIRST_NAME] &&
@@ -86,7 +84,7 @@ function EmployeeForm() {
         name={EMPLOYEE_FORM_NAMES.FIRST_NAME}
         id="firstName"
         placeholder="Enter your First Name"
-        label="First Name"
+        label="First Name*"
         value={formik.values[EMPLOYEE_FORM_NAMES.FIRST_NAME]}
         onChange={formik.handleChange}
         error={formik.errors[EMPLOYEE_FORM_NAMES.FIRST_NAME]}
@@ -95,7 +93,7 @@ function EmployeeForm() {
         name={EMPLOYEE_FORM_NAMES.LAST_NAME}
         id="lastName"
         placeholder="Enter your Last Name"
-        label="Last Name"
+        label="Last Name*"
         value={formik.values[EMPLOYEE_FORM_NAMES.LAST_NAME]}
         onChange={formik.handleChange}
         error={formik.errors[EMPLOYEE_FORM_NAMES.LAST_NAME]}
@@ -113,7 +111,7 @@ function EmployeeForm() {
         name={EMPLOYEE_FORM_NAMES.POSITION}
         id="position"
         placeholder="Enter your Position"
-        label="Position"
+        label="Position*"
         value={formik.values[EMPLOYEE_FORM_NAMES.POSITION]}
         onChange={formik.handleChange}
         error={formik.errors[EMPLOYEE_FORM_NAMES.POSITION]}
