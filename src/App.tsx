@@ -33,11 +33,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/users" element={<Users />} />
-          <Route path="/clients" element={<Clients />}>
-            <Route path="audi" element={<Audi />} />
-            <Route path="bmw" element={<Bmw />} />
-            <Route path="volvo" element={<Volvo />} />
-          </Route>
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/clients/audi" element={<Audi />} />
+          <Route path="/clients/bmw" element={<Bmw />} />
+          <Route path="/clients/volvo" element={<Volvo />} />
           <Route path="*" element="PageNotFound" />
         </Routes>
       </Layout>
