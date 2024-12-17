@@ -1,5 +1,5 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import GlobalStyles from "./styles/GlobalStyles";
 
 import Layout from "components/Layout/Layout";
@@ -10,7 +10,6 @@ import Clients from "pages/Clients/Clients";
 import Volvo from "pages/Clients/components/Volvo/Volvo";
 import Audi from "pages/Clients/components/Audi/Audi";
 import Bmw from "pages/Clients/components/Bmw/Bmw";
-
 
 //lessons
 // import Lesson06 from "./lessons/Lesson06/Lesson06";
@@ -23,7 +22,7 @@ import Bmw from "pages/Clients/components/Bmw/Bmw";
 // import Homework07 from "./homeworks/Homework07/Homework07";
 // import Homework08 from "./homeworks/Homework08/Homework08";
 // import Homework09 from "homeworks/Homework09/Homework09";
-<!-- import Homework11 from "homeworks/Homework11/Homework11"; -->
+// import Homework11 from "homeworks/Homework11/Homework11";
 
 //consultations
 // import Consultation04 from "consultations/Consultation04/Consultation04";
@@ -54,12 +53,8 @@ function App() {
       {/* <Lesson09 /> */}
       {/* <Homework09 /> */}
       {/* <Lesson11/> */}
-<!--       <Homework11 /> -->
-
-    </>
-
+      {/* <Homework11 /> */}
     </BrowserRouter>
-
   );
 }
 
