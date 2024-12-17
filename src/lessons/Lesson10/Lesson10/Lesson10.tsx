@@ -19,6 +19,7 @@ import Spinner from "components/Spinner/Spinner";
 function Lesson10() {
   const [facts, setFacts] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | undefined>("");
 
   const CAT_INFO_URL = " https://catfact.ninja/fact";
 
@@ -43,7 +44,8 @@ function Lesson10() {
       const respons = await axios.get(CAT_INFO_URL);
       setFacts((arrayInfo) => [...arrayInfo, respons.data.fact]);
       console.log(respons);
-    } catch (error) {
+    } catch (err) {
+      setError("Error: " + err);
       console.log(error);
     } finally {
       setLoading(false);

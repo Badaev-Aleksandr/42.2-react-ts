@@ -11,11 +11,13 @@ import Volvo from "pages/Clients/components/Volvo/Volvo";
 import Audi from "pages/Clients/components/Audi/Audi";
 import Bmw from "pages/Clients/components/Bmw/Bmw";
 
+
 //lessons
 // import Lesson06 from "./lessons/Lesson06/Lesson06";
 // import Lesson07 from "./lessons/Lesson07/Lesson07";
 // import Lesson08 from "./lessons/Lesson08/Lesson08";
 // import Lesson09 from "lessons/Lesson09/Lesson09";
+// import Lesson10 from "lessons/Lesson10/Lesson10/Lesson10";
 // import Lesson11 from "lessons/Lesson11/Lesson11";
 
 //homeworks
@@ -31,7 +33,7 @@ function App() {
   return (
     <BrowserRouter>
       <GlobalStyles />
-      {/* <Layout>
+      <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -42,7 +44,7 @@ function App() {
           <Route path="/clients/volvo" element={<Volvo />} />
           <Route path="*" element="PageNotFound" />
         </Routes>
-      </Layout> */}
+      </Layout>
       {/* <Lesson06 /> */}
       {/* <Lesson07 /> */}
       {/* <Consultation04/> */}
@@ -52,6 +54,7 @@ function App() {
       {/* <Lesson09 /> */}
       {/* <Lesson09 /> */}
       {/* <Homework09 /> */}
+      {/* <Lesson10/> */}
       {/* <Lesson11/> */}
       {/* <Homework11 /> */}
     </BrowserRouter>
