@@ -6,6 +6,7 @@ import About from "pages/About/About";
 import Home from "pages/Home/Home";
 import Users from "pages/Users/Users";
 
+
 //lessons
 // import Lesson06 from "./lessons/Lesson06/Lesson06";
 // import Lesson07 from "./lessons/Lesson07/Lesson07";
@@ -19,6 +20,7 @@ import Users from "pages/Users/Users";
 // import Homework09 from "homeworks/Homework09/Homework09";
 
 //consultations
+// import Consultation04 from "consultations/Consultation04/Consultation04";
 
 function App() {
   return (
@@ -34,6 +36,7 @@ function App() {
       </Layout>
       {/* <Lesson06 /> */}
       {/* <Lesson07 /> */}
+      {/* <Consultation04/> */}
       {/* <Homework07/> */}
       {/* <Lesson08 /> */}
       {/* <Homework08 /> */}
@@ -46,3 +49,4 @@ function App() {
 }
 
 export default App;
+Ö
