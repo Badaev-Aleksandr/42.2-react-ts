@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const ClientsPage = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ export const ClientsPage = styled.div`
   flex: 1;
   font-size: 30px;
 `;
-export const StyledNavLink = styled(NavLink)`
+export const StyledNavLink = styled(Link)`
   text-decoration: none;
   font-size: 30px;
 `;
