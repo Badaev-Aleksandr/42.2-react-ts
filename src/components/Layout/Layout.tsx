@@ -1,5 +1,3 @@
-
-
 import {
   Footer,
   Header,
@@ -15,7 +13,9 @@ function Layout({ children }: LayoutProps) {
   return (
     <LayoutComponent>
       <Header>
-        <LogoContainer></LogoContainer>
+        <StyledNavLink to="/">
+          <LogoContainer></LogoContainer>
+        </StyledNavLink>
         <NavContainer>
           <StyledNavLink
             to="/"
@@ -40,6 +40,14 @@ function Layout({ children }: LayoutProps) {
             })}
           >
             Users
+          </StyledNavLink>
+          <StyledNavLink
+            to="/clients"
+            style={({ isActive }) => ({
+              textDecoration: isActive ? "underline" : "none",
+            })}
+          >
+            Clients
           </StyledNavLink>
         </NavContainer>
       </Header>
