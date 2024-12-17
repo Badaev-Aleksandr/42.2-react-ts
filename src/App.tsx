@@ -32,7 +32,7 @@ function App() {
   return (
     <BrowserRouter>
       <GlobalStyles />
-      <Layout>
+      {/* <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -43,7 +43,7 @@ function App() {
           <Route path="/clients/volvo" element={<Volvo />} />
           <Route path="*" element="PageNotFound" />
         </Routes>
-      </Layout>
+      </Layout> */}
       {/* <Lesson06 /> */}
       {/* <Lesson07 /> */}
       {/* <Consultation04/> */}
@@ -54,9 +54,8 @@ function App() {
       {/* <Lesson09 /> */}
       {/* <Homework09 /> */}
       {/* <Lesson11/> */}
-<!--       <Homework11 /> -->
 
-    </>
+  
 
     </BrowserRouter>
 
