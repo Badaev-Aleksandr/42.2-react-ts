@@ -11,7 +11,6 @@ import Volvo from "pages/Clients/components/Volvo/Volvo";
 import Audi from "pages/Clients/components/Audi/Audi";
 import Bmw from "pages/Clients/components/Bmw/Bmw";
 
-
 //lessons
 // import Lesson06 from "./lessons/Lesson06/Lesson06";
 // import Lesson07 from "./lessons/Lesson07/Lesson07";
@@ -19,6 +18,7 @@ import Bmw from "pages/Clients/components/Bmw/Bmw";
 // import Lesson09 from "lessons/Lesson09/Lesson09";
 // import Lesson10 from "lessons/Lesson10/Lesson10/Lesson10";
 // import Lesson11 from "lessons/Lesson11/Lesson11";
+import Lesson13 from "lessons/Lesson13/Lesson13";
 
 //homeworks
 // import Homework07 from "./homeworks/Homework07/Homework07";
@@ -42,6 +42,7 @@ function App() {
           <Route path="/clients/audi" element={<Audi />} />
           <Route path="/clients/bmw" element={<Bmw />} />
           <Route path="/clients/volvo" element={<Volvo />} />
+          <Route path="/lesson13" element={<Lesson13 />} />
           <Route path="*" element="PageNotFound" />
         </Routes>
       </Layout>

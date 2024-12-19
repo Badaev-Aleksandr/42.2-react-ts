@@ -8,7 +8,7 @@ export const ClientsPage = styled.div`
   flex: 1;
   font-size: 30px;
 `;
-export const StyledNavLink = styled(Link)`
+export const StyledLink = styled(Link)`
   text-decoration: none;
   font-size: 30px;
 `;

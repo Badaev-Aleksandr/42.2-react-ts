@@ -1,21 +1,13 @@
-import Button from "components/Button/Button";
-
-import { AudiImg, AudiPage, ButtonWrapper, ImgTitle } from "./styles";
+import { AudiImg, AudiPage, ImgTitle } from "./styles";
 
 import audiImg from "assets/audi.png";
-import { useNavigate } from "react-router-dom";
+
+import GoBack from "components/GoBack/GoBack";
 
 function Audi() {
-  const navigate = useNavigate();
-
-  const goToClientsPage = () => {
-    navigate("/clients");
-  };
   return (
     <AudiPage>
-      <ButtonWrapper>
-        <Button name="Go back" onClick={goToClientsPage} />
-      </ButtonWrapper>
+      <GoBack />
       <ImgTitle>Audi</ImgTitle>
       <AudiImg src={audiImg} />
     </AudiPage>

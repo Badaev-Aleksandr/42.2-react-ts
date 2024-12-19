@@ -10,11 +10,6 @@ export const VolvoPage = styled.div`
   gap: 15px;
 `;
 
-export const ButtonWrapper = styled.div`
-  align-self: flex-start;
-  width: 200px;
-`;
-
 export const ImgTitle = styled.h1`
   font-size: 40px;
 `;

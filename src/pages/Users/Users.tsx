@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import { useNavigate } from "react-router-dom";
 
 import Button from "components/Button/Button";
@@ -10,6 +12,14 @@ const navigate = useNavigate();
 const goToAboutPage = ()=>{
     navigate("/about");
 }
+
+//пример useEffect при размонтировании компонента Users
+useEffect(()=>{
+  return ()=>{
+    console.log("Components Users unmounting");
+    
+  }
+},[])
 
   return (
     <UsersPage>

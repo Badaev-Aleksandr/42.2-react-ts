@@ -2,7 +2,7 @@ import {
   ClientsPage,
   CompanieLi,
   CompaniesTitle,
-  StyledNavLink,
+  StyledLink,
   СompaniesList,
 } from "./styles";
 
@@ -12,13 +12,13 @@ function Clients() {
       <CompaniesTitle>Companies</CompaniesTitle>
       <СompaniesList>
         <CompanieLi>
-          <StyledNavLink to="audi">AUDI</StyledNavLink>
+          <StyledLink to="audi">AUDI</StyledLink>
         </CompanieLi>
         <CompanieLi>
-          <StyledNavLink to="bmw">BMW</StyledNavLink>
+          <StyledLink to="bmw">BMW</StyledLink>
         </CompanieLi>
         <CompanieLi>
-          <StyledNavLink to="volvo">VOLVO</StyledNavLink>
+          <StyledLink to="volvo">VOLVO</StyledLink>
         </CompanieLi>
       </СompaniesList>
     </ClientsPage>
